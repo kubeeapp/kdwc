@@ -5,9 +5,9 @@
  * @author Nick Martianov
  *
  **/
-namespace KDWC\PublicFace\Helpers\IfSoHttpGetRequest;
+namespace KDWC\PublicFace\Helpers\KdWcHttpGetRequest;
 
-class IfSoHttpGetRequest{
+class KdWcHttpGetRequest{
     private $requestURL;
 
     private $params;
@@ -34,7 +34,7 @@ class IfSoHttpGetRequest{
     }
 
     public static function create($url=null, $referrer = ''){
-        return new IfSoHttpGetRequest($url,$referrer);
+        return new KdWcHttpGetRequest($url,$referrer);
     }
 
     private function getParamsFromURL($url){

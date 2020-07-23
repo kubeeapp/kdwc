@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-class IFSO_Dynamic_Widget extends Widget_Base {
+class KDWC_Dynamic_Widget extends Widget_Base {
 
     public function get_name() {
         return 'kdwc_dynamic_content';
@@ -23,7 +23,7 @@ class IFSO_Dynamic_Widget extends Widget_Base {
     }
 
     public function get_categories() {
-        return [ 'IFSO' ];
+        return [ 'KDWC' ];
     }
 
     public function get_keywords() {

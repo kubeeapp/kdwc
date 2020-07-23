@@ -4,11 +4,11 @@
  * @author Matan Green <matangrn@gmail.com>
  */
 
-if (!class_exists('IfSo_PageVisitsTimedCollection')) {
+if (!class_exists('KdWc_PageVisitsTimedCollection')) {
 
 	require_once('kdwc-timed-collection.php');
 
-	class IfSo_PageVisitsTimedCollection extends IfSo_TimedCollection {
+	class KdWc_PageVisitsTimedCollection extends KdWc_TimedCollection {
 
 		public function add_page( $page, $saved_until ) {
 			if ( $this->is_page_exists( $page ) )

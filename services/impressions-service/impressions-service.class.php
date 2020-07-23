@@ -9,7 +9,7 @@ class ImpressionsService {
 		$web_service_domain = 'http://www.kd-wc.com/api/';
 		$web_service_test_domain = 'http://kdwc2.bbold.co.il/api/';
 			
-		$this->web_service_url = $web_service_domain.IFSO_API_VERSION.'/impressions-service/impressions-api.php';
+		$this->web_service_url = $web_service_domain.KDWC_API_VERSION.'/impressions-service/impressions-api.php';
 		$this->impressions_update_interval = 60 * 60 * 4; // 4 hours (in seconds)
 		$this->transient_name = 'kdwc_transient_impressions_update';
 	}

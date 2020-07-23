@@ -1,7 +1,7 @@
 <?php
 namespace KDWC\PublicFace\Services\TriggersService\Triggers;
 require_once( plugin_dir_path ( __DIR__ ) . 'trigger-base.class.php');
-require_once( IFSO_PLUGIN_SERVICES_BASE_DIR . 'groups-service/groups-service.class.php' );
+require_once( KDWC_PLUGIN_SERVICES_BASE_DIR . 'groups-service/groups-service.class.php' );
 
 use KDWC\PublicFace\Services\GroupsService;
 

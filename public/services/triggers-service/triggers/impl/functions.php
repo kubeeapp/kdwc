@@ -21,11 +21,11 @@ add_action( 'after_setup_theme', 'avada_lang_setup' );
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
 	function theme_enqueue_scripts() {
     	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'avada-stylesheet' ) );
-    	wp_enqueue_style( 'IfSoJqueryUiMinCss', get_stylesheet_directory_uri() . '/css/jquery-ui.min.css', array() );
+    	wp_enqueue_style( 'KdWcJqueryUiMinCss', get_stylesheet_directory_uri() . '/css/jquery-ui.min.css', array() );
 
-		wp_enqueue_script('IfSoJqueryUiMinJs', get_stylesheet_directory_uri() . '/js/jquery-ui.min.js', array('jquery'));
+		wp_enqueue_script('KdWcJqueryUiMinJs', get_stylesheet_directory_uri() . '/js/jquery-ui.min.js', array('jquery'));
 	    
-		wp_enqueue_script('general_js', get_stylesheet_directory_uri() . '/js/general.js', array('jquery', 'IfSoJqueryUiMinJs'));
+		wp_enqueue_script('general_js', get_stylesheet_directory_uri() . '/js/general.js', array('jquery', 'KdWcJqueryUiMinJs'));
 
 	    if (!is_page(1551) && !is_page(1821)) {
 		    wp_enqueue_script('vticker_min_js', get_stylesheet_directory_uri() . '/js/jquery.vticker.min.js', array('jquery'));
@@ -70,24 +70,24 @@ if (!current_user_can('administrator') && !is_admin()) {
 /* Hooks for EDD License */
 
 function one_license_per_domain_restriction($result, $license) {
-	$result = IfSo_License_Hooks::apply_one_license_per_domain_restriction($result, $license);
+	$result = KdWc_License_Hooks::apply_one_license_per_domain_restriction($result, $license);
 
 	return $result;
 
 }
 
 function update_license_for_domain($status, $license) {
-	$status = IfSo_License_Hooks::update_license_for_domain($status, $license);
+	$status = KdWc_License_Hooks::update_license_for_domain($status, $license);
 
 	return $status;
 }
 
 function deactivated_license_hook($license_id, $download_id) {
-	IfSo_License_Hooks::deactivated_license_hook($license_id, $download_id);
+	KdWc_License_Hooks::deactivated_license_hook($license_id, $download_id);
 }
 
 function activated_license_hook($license_id, $download_id) {
-	IfSo_License_Hooks::activated_license_hook($license_id, $download_id);
+	KdWc_License_Hooks::activated_license_hook($license_id, $download_id);
 }
 
 add_filter( 'edd_sl_activate_license_response', 'one_license_per_domain_restriction', 10, 2 );

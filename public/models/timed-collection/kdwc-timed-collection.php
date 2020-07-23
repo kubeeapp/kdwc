@@ -8,8 +8,8 @@
  * @author Matan Green
  */
 
-if (!class_exists('IfSo_TimedCollection')) {
-	class IfSo_TimedCollection {
+if (!class_exists('KdWc_TimedCollection')) {
+	class KdWc_TimedCollection {
 		protected $cached_models;
 		protected $persistStrategy;
 		protected $itemConverterStrategy;

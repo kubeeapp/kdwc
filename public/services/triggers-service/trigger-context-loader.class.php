@@ -3,7 +3,7 @@
 namespace KDWC\PublicFace\Services\TriggersService;
 
 require_once('trigger-context.class.php');
-require_once(IFSO_PLUGIN_BASE_DIR . 'public/helpers/kdwc-request/Kd-Wc-Http-Get-Request.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'public/helpers/kdwc-request/Kd-Wc-Http-Get-Request.php');
 
 class TriggerContextLoader {
 	public static function load_context($atts, $http_request) {
@@ -12,7 +12,7 @@ class TriggerContextLoader {
 		$data_versions = self::load_data_versions($trigger_id);
 		$default_content = self::load_default_content($trigger_id);
         if(empty($http_request)){
-            $http_request = \KDWC\PublicFace\Helpers\IfSoHttpGetRequest\IfSoHttpGetRequest::create();
+            $http_request = \KDWC\PublicFace\Helpers\KdWcHttpGetRequest\KdWcHttpGetRequest::create();
         }
 
 

@@ -7,11 +7,11 @@
  * @author Matan Green <matangrn@gmail.com>
  */
 
-if (!class_exists('IfSo_CookiePersistStrategy')) {
+if (!class_exists('KdWc_CookiePersistStrategy')) {
 
 	require_once('kdwc-persist-strategy.php');
 
-	class IfSo_CookiePersistStrategy extends IfSo_PersistStrategy {
+	class KdWc_CookiePersistStrategy extends KdWc_PersistStrategy {
 
 		protected $cookie_name;
 

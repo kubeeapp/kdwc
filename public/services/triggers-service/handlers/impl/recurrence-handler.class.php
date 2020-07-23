@@ -4,8 +4,8 @@ namespace KDWC\PublicFace\Services\TriggersService\Handlers;
 
 require_once( plugin_dir_path ( __DIR__ ) . 'chain-handler-base.class.php');
 require_once( plugin_dir_path ( dirname(__DIR__) ) . 'filters/trigger-filter.class.php');
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php');
-require_once( IFSO_PLUGIN_SERVICES_BASE_DIR . 'recurrence-service/recurrence-service.class.php' );
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php');
+require_once( KDWC_PLUGIN_SERVICES_BASE_DIR . 'recurrence-service/recurrence-service.class.php' );
 
 use KDWC\PublicFace\Services\TriggersService\Filters;
 use KDWC\Services\LicenseService;

@@ -6,14 +6,14 @@
  * @author     Matan Green <matangrn@gmail.com>
  */
 
-if (!class_exists('IfSo_Page_Visits_Service')) {
+if (!class_exists('KdWc_Page_Visits_Service')) {
 
-require_once (IFSO_PLUGIN_BASE_DIR . 'services/class-kd-wc-plugin-settings-service.php');
+require_once (KDWC_PLUGIN_BASE_DIR . 'services/class-kd-wc-plugin-settings-service.php');
 require_once(plugin_dir_path ( __DIR__ ) . 'timed-collection/kdwc-page-visits-timed-collection.php');
 require_once(plugin_dir_path ( __DIR__ ) . 'timed-collection/persist-strategy/kdwc-cookie-persist-strategy.php');
 require_once(plugin_dir_path ( __DIR__ ) . 'timed-collection/item-converter-strategy/kdwc-page-visit-item-converter-strategy.php');
 
-class IfSo_Page_Visits_Service {
+class KdWc_Page_Visits_Service {
 
 	private static $instance; 
 
@@ -29,20 +29,20 @@ class IfSo_Page_Visits_Service {
 
 	private function create_page_visits_collection() {
 		/* create persist strategy */
-		$persistStrategy = new IfSo_CookiePersistStrategy($this->cookie_name);
+		$persistStrategy = new KdWc_CookiePersistStrategy($this->cookie_name);
 		/* create item converter strategy */
-		$itemConverterStrategy = new IfSo_PageVisitItemConverterStrategy();
+		$itemConverterStrategy = new KdWc_PageVisitItemConverterStrategy();
 		$save_time = $this->get_save_time_span();
 
 		return 
-			new IfSo_PageVisitsTimedCollection( $persistStrategy, 
+			new KdWc_PageVisitsTimedCollection( $persistStrategy, 
 												$itemConverterStrategy,
 												$save_time );
 	}
 
 	public static function getInstance() {
 		if ( NULL == self::$instance )
-			self::$instance = new IfSo_Page_Visits_Service();
+			self::$instance = new KdWc_Page_Visits_Service();
 
 		return self::$instance;
 	}

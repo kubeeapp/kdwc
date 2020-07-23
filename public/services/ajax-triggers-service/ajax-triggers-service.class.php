@@ -1,12 +1,12 @@
 <?php
 namespace KDWC\PublicFace\Services\AjaxTriggersService;
 
-require_once IFSO_PLUGIN_SERVICES_BASE_DIR . 'triggers-service/triggers-service.class.php';
-require_once(IFSO_PLUGIN_BASE_DIR . 'public/helpers/kdwc-request/Kd-Wc-Http-Get-Request.php');
-require_once(IFSO_PLUGIN_BASE_DIR . 'public/services/analytics-service/analytics-service.class.php');
+require_once KDWC_PLUGIN_SERVICES_BASE_DIR . 'triggers-service/triggers-service.class.php';
+require_once(KDWC_PLUGIN_BASE_DIR . 'public/helpers/kdwc-request/Kd-Wc-Http-Get-Request.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'public/services/analytics-service/analytics-service.class.php');
 
 use KDWC\PublicFace\Services\TriggersService;
-use KDWC\PublicFace\Helpers\IfSoHttpGetRequest as IfsoRequest;
+use KDWC\PublicFace\Helpers\KdWcHttpGetRequest as IfsoRequest;
 
 class AjaxTriggersService{
     private static $instance;
@@ -21,7 +21,7 @@ class AjaxTriggersService{
     }
 
     public function create_kdwc_ajax_tag($trigger_id){
-        $html = "<IfSoTrigger tid='{$trigger_id}' style='display:none;'></IfSoTrigger>";
+        $html = "<KdWcTrigger tid='{$trigger_id}' style='display:none;'></KdWcTrigger>";
         return $html;
     }
 
@@ -38,7 +38,7 @@ class AjaxTriggersService{
             $page_url = $_REQUEST['page_url'];
             $pageload_referrer = !empty($_REQUEST['pageload_referrer']) ? $_REQUEST['pageload_referrer'] : '';
             $triggers_service = TriggersService\TriggersService::get_instance();
-            $http_request = IfsoRequest\IfSoHttpGetRequest::create($page_url,$pageload_referrer);
+            $http_request = IfsoRequest\KdWcHttpGetRequest::create($page_url,$pageload_referrer);
             \KDWC\PublicFace\Services\AnalyticsService\AnalyticsService::get_instance()->useAjax=false;
             if($triggers && is_array($triggers)){
                 $res = new \stdClass();

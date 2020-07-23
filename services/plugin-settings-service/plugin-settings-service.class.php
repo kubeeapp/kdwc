@@ -81,7 +81,7 @@ class PluginSettingsService {
 	private function remove_visits_cookie_option() {
 		$default = true;
 		$postName = 'kdwc_settings_pages_remove_visits_cookie';
-		$option = new IfSoSettingsYesNoOption(
+		$option = new KdWcSettingsYesNoOption(
 				self::REMOVE_COOKIE,
 				$default,
 				$postName
@@ -92,7 +92,7 @@ class PluginSettingsService {
 	private function create_allow_fragmented_cache_option() {
 		$default = false;
 		$postName = 'kdwc_settings_pages_allow_fragmented_cache';
-		$option = new IfSoSettingsYesNoOption(
+		$option = new KdWcSettingsYesNoOption(
 				self::ALLOW_FRAGMENTED_CACHE,
 				$default,
 				$postName
@@ -103,7 +103,7 @@ class PluginSettingsService {
 	private function create_remove_auto_p_tag_option() {
 		$default = true;
 		$postName = 'kdwc_settings_pages_remove_auto_p_tag';
-		$option = new IfSoSettingsYesNoOption(
+		$option = new KdWcSettingsYesNoOption(
 				self::REMOVE_AUTO_P_TAG_OPTION,
 				$default,
 				$postName
@@ -114,7 +114,7 @@ class PluginSettingsService {
 	private function create_apply_the_content_filter_option() {
 		$default = true;
 		$postName = 'kdwc_settings_pages_apply_the_content_filter';
-		$option = new IfSoSettingsYesNoOption(
+		$option = new KdWcSettingsYesNoOption(
 				self::APPLY_THE_CONTENT_FILTER_OPTION,
 				$default,
 				$postName
@@ -125,7 +125,7 @@ class PluginSettingsService {
 	private function create_remove_plugin_data_option() {
 		$default = false;
 		$postName = 'kdwc_settings_pages_remove_data_uninstall';
-		$option = new IfSoSettingsYesNoOption(
+		$option = new KdWcSettingsYesNoOption(
 				self::REMOVE_PLUGIN_DATA_OPTION,
 				$default,
 				$postName
@@ -138,7 +138,7 @@ class PluginSettingsService {
 			'duration_type' => 'weeks',
 			'duration_value' => 2
 		);
-		$option = new IfSoSettingsPagesVisitedOption(
+		$option = new KdWcSettingsPagesVisitedOption(
 				self::PAGES_VISITED_OPTION,
 				$default
 			);
@@ -148,7 +148,7 @@ class PluginSettingsService {
 	private function create_allow_shortcodes_option() {
 		$default = false;
 		$postName = 'kdwc_settings_pages_allow_shortcodes';
-		$option = new IfSoSettingsYesNoOption(
+		$option = new KdWcSettingsYesNoOption(
 				self::ALLOW_SHORTCODES,
 				$default,
 				$postName
@@ -159,7 +159,7 @@ class PluginSettingsService {
 	private function create_disable_cache_option() {
 		$default = false;
 		$postName = 'kdwc_settings_pages_disable_cache';
-		$option = new IfSoSettingsYesNoOption(
+		$option = new KdWcSettingsYesNoOption(
 				self::DISABLE_CACHE,
 				$default,
 				$postName
@@ -170,7 +170,7 @@ class PluginSettingsService {
     private function create_disable_analytics_option() {
         $default = false;
         $postName = 'kdwc_settings_pages_analytics_disabled';
-        $option = new IfSoSettingsYesNoOption(
+        $option = new KdWcSettingsYesNoOption(
             self::DISABLE_ANALYTICS,
             $default,
             $postName
@@ -181,7 +181,7 @@ class PluginSettingsService {
     private function create_ajax_analytics_option() {
         $default = true;
         $postName = 'kdwc_settings_pages_analytics_with_ajax';
-        $option = new IfSoSettingsYesNoOption(
+        $option = new KdWcSettingsYesNoOption(
             self::AJAX_ANALYTICS,
             $default,
             $postName
@@ -192,7 +192,7 @@ class PluginSettingsService {
     private function create_user_group_limit_option(){
         $default = 5;
         $postName = 'kdwc_settings_pages_user_group_limit';
-        $option = new IfSoSettingsNumberOption(
+        $option = new KdWcSettingsNumberOption(
             self::USER_GROUP_LIMIT,
             $default,
             $postName
@@ -203,7 +203,7 @@ class PluginSettingsService {
     private function create_groups_cookie_lifespan_option(){
         $default = 365;
         $postName = 'kdwc_settings_pages_groups_cookie_lifespan';
-        $option = new IfSoSettingsNumberOption(
+        $option = new KdWcSettingsNumberOption(
             self::GROUPS_COOKIE_LIFESPAN,
             $default,
             $postName
@@ -214,7 +214,7 @@ class PluginSettingsService {
     private function create_render_triggers_via_ajax_option(){
         $default = false;
         $postName = 'kdwc_settings_page_render_triggers_via_ajax';
-        $option = new IfSoSettingsYesNoOption(
+        $option = new KdWcSettingsYesNoOption(
             self::RENDER_TRIGGERS_VIA_AJAX,
             $default,
             $postName
@@ -255,13 +255,13 @@ class PluginSettingsService {
 	}
 
 	private function redirect_to_settings_page() {
-		$redirect = admin_url( 'admin.php?page=' . EDD_IFSO_PLUGIN_SETTINGS_PAGE );
+		$redirect = admin_url( 'admin.php?page=' . EDD_KDWC_PLUGIN_SETTINGS_PAGE );
 		wp_redirect( $redirect );
 		exit();
 	}
 }
 
-abstract class IfSoSettingsOptionBase {
+abstract class KdWcSettingsOptionBase {
 	private $optionName;
 	private $optionDefault;
 
@@ -298,8 +298,8 @@ abstract class IfSoSettingsOptionBase {
 	abstract protected function cache_value($optionValue);
 }
 
-class IfSoSettingsPagesVisitedOption
-	extends IfSoSettingsOptionBase {
+class KdWcSettingsPagesVisitedOption
+	extends KdWcSettingsOptionBase {
 
 	private $cachedValue;
 
@@ -354,11 +354,11 @@ class IfSoSettingsPagesVisitedOption
 
 	protected function cache_value( $optionValue ) {
 		$this->cachedValue = 
-			new IfSoPagesVisitedOptionData($optionValue);
+			new KdWcPagesVisitedOptionData($optionValue);
 	}
 }
 
-class IfSoSettingsYesNoOption extends IfSoSettingsOptionBase {
+class KdWcSettingsYesNoOption extends KdWcSettingsOptionBase {
 
 	protected $cachedValue;
 	protected $postName;
@@ -396,7 +396,7 @@ class IfSoSettingsYesNoOption extends IfSoSettingsOptionBase {
 	}
 }
 
-    class IfSoSettingsNumberOption extends IfSoSettingsOptionBase {
+    class KdWcSettingsNumberOption extends KdWcSettingsOptionBase {
 
         protected $cachedValue;
         protected $postName;
@@ -437,7 +437,7 @@ class IfSoSettingsYesNoOption extends IfSoSettingsOptionBase {
         }
     }
 
-class IfSoPagesVisitedOptionData {
+class KdWcPagesVisitedOptionData {
 
 	private $durationType;
 	private $durationValue;

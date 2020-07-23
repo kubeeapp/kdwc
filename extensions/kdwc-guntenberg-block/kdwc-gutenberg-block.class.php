@@ -7,9 +7,9 @@
  * @subpackage KDWC/extensions
  * @author Nick Martianov
  */
-namespace KDWC\Extensions\IfSoGutenbergBlock\IfSoGutenberBlock;
+namespace KDWC\Extensions\KdWcGutenbergBlock\KdWcGutenberBlock;
 
-class IfSoGutenberBlock{
+class KdWcGutenberBlock{
     private static $instance;
 
     private $gutenberg_exists = false;
@@ -21,7 +21,7 @@ class IfSoGutenberBlock{
 
     public static function get_instance(){
         if(self::$instance==NULL)
-            self::$instance = new IfSoGutenberBlock();
+            self::$instance = new KdWcGutenberBlock();
         return self::$instance;
     }
 

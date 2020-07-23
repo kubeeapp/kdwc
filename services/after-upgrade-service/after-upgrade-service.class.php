@@ -11,7 +11,7 @@ class AfterUpgradeService {
     private static $instance, $code_version, $db_version;
 
     private function __construct() {
-        self::$code_version = IFSO_WP_VERSION;
+        self::$code_version = KDWC_WP_VERSION;
         self::$db_version = get_option('kdwc_wp_version');
     }
 
@@ -36,7 +36,7 @@ class AfterUpgradeService {
         self::reactivate_licenses();
 
         //Create the tables required to run the plugin, this also runs on activation
-        require_once IFSO_PLUGIN_BASE_DIR . 'extensions/kdwc-tables/kdwc-table-creator.php';
+        require_once KDWC_PLUGIN_BASE_DIR . 'extensions/kdwc-tables/kdwc-table-creator.php';
         \jal_install();
         self::reset_metabox_order();
         //Add new columns to kdwc_local_user_table to help track license renewals
@@ -63,8 +63,8 @@ class AfterUpgradeService {
 
 
     private static function reactivate_licenses(){
-        require_once IFSO_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php';
-        require_once IFSO_PLUGIN_BASE_DIR . 'services/license-service/geo-license-service.class.php';
+        require_once KDWC_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php';
+        require_once KDWC_PLUGIN_BASE_DIR . 'services/license-service/geo-license-service.class.php';
 
 
         // retrieve our license key & item name from the DB
@@ -105,7 +105,7 @@ class AfterUpgradeService {
 
     private static function reset_geo_notification_triggers(){
         if(version_compare(self::$db_version,'1.4.5','<')){     //Only do this if upgrading from kd-wc v. 1.4.4>
-            require_once IFSO_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php';
+            require_once KDWC_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php';
             $geo_service = \KDWC\Services\GeolocationService\GeolocationService::get_instance();
             $geo_service->reset_email_triggers();
         }

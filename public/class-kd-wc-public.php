@@ -4,7 +4,7 @@ require_once( __DIR__. '/services/triggers-service/triggers-service.class.php' )
 require_once( __DIR__. '/services/page-visits-service/page-visits-service.class.php' );
 require_once( __DIR__. '/services/analytics-service/analytics-service.class.php' );
 require_once( __DIR__. '/services/ajax-triggers-service/ajax-triggers-service.class.php' );
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
 
 use KDWC\PublicFace\Services\TriggersService;
 use KDWC\PublicFace\Services\PageVisitsService;

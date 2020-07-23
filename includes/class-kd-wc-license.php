@@ -40,7 +40,7 @@ class Kd_Wc_License {
 			$license_data = false;
 
 			// Call the custom API.
-			$response = wp_remote_post( EDD_IFSO_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_payload ) );
+			$response = wp_remote_post( EDD_KDWC_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_payload ) );
 
 			// make sure the response came back okay
 			if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {

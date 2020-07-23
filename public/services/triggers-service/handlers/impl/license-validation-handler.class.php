@@ -3,7 +3,7 @@
 namespace KDWC\PublicFace\Services\TriggersService\Handlers;
 
 require_once( plugin_dir_path ( __DIR__ ) . 'chain-handler-base.class.php');
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php');
 
 use KDWC\Services\LicenseService;
 

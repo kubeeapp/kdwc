@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-class IFSO_Elementor_Widgets {
+class KDWC_Elementor_Widgets {
 
 	protected static $instance = null;
 
@@ -39,7 +39,7 @@ class IFSO_Elementor_Widgets {
 
 
 	public function kdwc_register_widgets() {
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\IFSO_Dynamic_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\KDWC_Dynamic_Widget() );
 	}
 
 	public function kdwc_enqueue_preview_styles(){
@@ -47,9 +47,9 @@ class IFSO_Elementor_Widgets {
 	}
 
 	public function kdwc_enqueue_scripts() {
-		wp_enqueue_script( 'datetime', plugin_dir_url( dirname( IFSO_PLUGIN_MAIN_FILE_NAME ) ) . 'admin/js/jquery.kdwcdatetimepicker.full.min.js',  [ 'jquery' ]);
-		wp_enqueue_script( 'WeeklyScheduleMinJs', plugin_dir_url( dirname( IFSO_PLUGIN_MAIN_FILE_NAME ) ) . 'admin/js/jquery.weekly-schedule-plugin.min.js',  [ 'jquery' ] );
-		wp_enqueue_script( 'kdwc-jquery-ui', plugin_dir_url( dirname( IFSO_PLUGIN_MAIN_FILE_NAME ) ) . 'admin/js/jquery-ui.min.js', [ 'jquery' ] );
+		wp_enqueue_script( 'datetime', plugin_dir_url( dirname( KDWC_PLUGIN_MAIN_FILE_NAME ) ) . 'admin/js/jquery.kdwcdatetimepicker.full.min.js',  [ 'jquery' ]);
+		wp_enqueue_script( 'WeeklyScheduleMinJs', plugin_dir_url( dirname( KDWC_PLUGIN_MAIN_FILE_NAME ) ) . 'admin/js/jquery.weekly-schedule-plugin.min.js',  [ 'jquery' ] );
+		wp_enqueue_script( 'kdwc-jquery-ui', plugin_dir_url( dirname( KDWC_PLUGIN_MAIN_FILE_NAME ) ) . 'admin/js/jquery-ui.min.js', [ 'jquery' ] );
 		wp_enqueue_script( 'kdwc-editor-js', plugin_dir_url(__FILE__)  . 'assets/js/kdwc.js', [
 			'jquery',
 			'kdwc-jquery-ui',
@@ -66,9 +66,9 @@ class IFSO_Elementor_Widgets {
 
     public function register_elementor_category() {
             \Elementor\Plugin::instance()->elements_manager->add_category(
-                'IFSO',
+                'KDWC',
                 [
-                    'title' => 'IF-SO',
+                    'title' => 'KDWC',
                 ]
             );
     }

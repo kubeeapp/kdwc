@@ -26,7 +26,7 @@ class LicenseAjaxService {
             'item_name'  => $item_id , // the name of our product in EDD
             'url'        => home_url()
         );
-        $response = wp_remote_post( EDD_IFSO_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+        $response = wp_remote_post( EDD_KDWC_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
         if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
             if ( is_wp_error( $response ) ) {
                 $message = $response->get_error_message();

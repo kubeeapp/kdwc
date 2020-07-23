@@ -12,7 +12,7 @@ class GeolocationService {
     
 	private function __construct() {
 		$web_service_domain = 'http://www.kd-wc.com/api/';
-		$this->web_service_url = $web_service_domain.IFSO_API_VERSION.'/geolocation-service/geolocation-api.php';
+		$this->web_service_url = $web_service_domain.KDWC_API_VERSION.'/geolocation-service/geolocation-api.php';
 	}
 	
 	public static function get_instance() {

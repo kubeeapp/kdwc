@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit;
 
-	require_once(IFSO_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php');
+	require_once(KDWC_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php');
 
 	use KDWC\Services\GeolocationService;
 
@@ -103,7 +103,7 @@
 	}
 
 	// General
-	// $kdwc_version = IFSO_WP_VERSION;
+	// $kdwc_version = KDWC_WP_VERSION;
 	// $kdwc_product = get_product_name($license, $status);
 
 	// Geolocation

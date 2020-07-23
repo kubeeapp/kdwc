@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $data = array();
 global $data_versions, $available_pages, $post_status, $languages, $data_rules, $displayClosedFeature, $freeTriggers, $lockedConditionBox, $lockedVersionBox, $isLicenseValid, $allowedTriggersForRecurrence, $notAllowedTriggersForGroups,  $timezones, $removePagesVisitedCookie;
 
-require_once(IFSO_PLUGIN_BASE_DIR. 'public/models/data-rules/kdwc-data-rules-model.class.php'); //including the model to get the trigger type list from it
+require_once(KDWC_PLUGIN_BASE_DIR. 'public/models/data-rules/kdwc-data-rules-model.class.php'); //including the model to get the trigger type list from it
 
 /* Loading from DB */
 
@@ -272,9 +272,9 @@ $notAllowedTriggersForGroups = array("Device");
 //     </div>
 // ';
 
-/* Ifso License End */
+/* KdWc License End */
 
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
 
 use KDWC\Services\PluginSettingsService;
 
@@ -405,7 +405,7 @@ function get_rule_item($index, $rule=array(), $is_template = false) {
         <div class="row rule-wrap">
             <div class="col-xs-12 rule-toolbar-wrap <?php echo (!$isLicenseValid && (!$is_template && isset($rule['trigger_type']) &&  !empty($rule['trigger_type']) && !in_array($rule['trigger_type'], $freeTriggers) || (isset($rule['trigger_type']) && $rule['trigger_type'] == "User-Behavior" && isset($rule['User-Behavior']) && !in_array($rule['User-Behavior'], array('LoggedIn', 'LoggedOut', 'Logged'))))) ? '' : ''; ?><?php echo (isset($rule['freeze-mode']) && $rule['freeze-mode'] == "true") ? "freeze-overlay-active-container" : ""; ?>">
                 <h3>
-                    <img src="<?php echo plugin_dir_url(dirname(__FILE__)) . 'images/IfSo_logo25X8.png'; ?>" />
+                    <img src="<?php echo plugin_dir_url(dirname(__FILE__)) . 'images/KdWc_logo25X8.png'; ?>" />
                     <!--<span class="version-count"><?php echo $current_version_count; ?></span>-->
                     <span class="version-alpha"><?php echo (__('Dynamic Content').' - '.__('Version', 'kd-wc')); ?> <?php echo $current_version_count_char; ?></span> 
                 </h3>
@@ -621,7 +621,7 @@ function get_rule_item($index, $rule=array(), $is_template = false) {
                             
                              <div class="locations-description <?php echo (!$areThereAnySelections) ? "hide-field" : "";?>">
                                 <div class="kdwc-pages-visited-settings-explain">
-                                    This version will be displayed if the visitor has visited one of the following pages in the last <a href="<?php echo admin_url( 'admin.php?page=' . EDD_IFSO_PLUGIN_SETTINGS_PAGE ); ?>" target="_blank"><?php echo $pagesVisitedDurationVisualTime; ?>&nbsp;<i class="fa fa-edit"><!--icon--></i></a>.
+                                    This version will be displayed if the visitor has visited one of the following pages in the last <a href="<?php echo admin_url( 'admin.php?page=' . EDD_KDWC_PLUGIN_SETTINGS_PAGE ); ?>" target="_blank"><?php echo $pagesVisitedDurationVisualTime; ?>&nbsp;<i class="fa fa-edit"><!--icon--></i></a>.
                                 </div>
                             </div>
 
@@ -709,7 +709,7 @@ function get_rule_item($index, $rule=array(), $is_template = false) {
                 <?php if ($removePagesVisitedCookie): ?>
                     <div class="kdwc-form-group">
                         <div data-field="page-visit-selection" class="noticebox-container  <?php echo (isset($rule['trigger_type']) && $rule['trigger_type'] == 'PageVisit') ? 'show-selection' : ''; ?>">
-                            <div class="pagevisit-noticebox yellow-noticebox"><p><?php _e('The pages visited condition relies on a cookie to track the visitor\'s activity. Activate the cookie to use this condition.', 'kd-wc');?>  <a target="_blank" href="<?php echo admin_url('admin.php?page=' . EDD_IFSO_PLUGIN_SETTINGS_PAGE); ?>">Settings</a> </p></div>
+                            <div class="pagevisit-noticebox yellow-noticebox"><p><?php _e('The pages visited condition relies on a cookie to track the visitor\'s activity. Activate the cookie to use this condition.', 'kd-wc');?>  <a target="_blank" href="<?php echo admin_url('admin.php?page=' . EDD_KDWC_PLUGIN_SETTINGS_PAGE); ?>">Settings</a> </p></div>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -1210,7 +1210,7 @@ function get_rule_item($index, $rule=array(), $is_template = false) {
                 <?php if (!isset($_COOKIE['kdwc_hide_no_groups_notice']) && empty($groups_list)): ?>
                     <div class="kdwc-form-group">
                         <div data-field="user-group-relation" class="noticebox-container  <?php echo (isset($rule['trigger_type']) && $rule['trigger_type'] == 'Groups' && empty($groups_list)) ? 'show-selection' : ''; ?>">
-                            <div class="nogroups_noticebox yellow-noticebox"><p><?php _e('You haven\'t created any audiences yet', 'kd-wc');?>  <a target="_blank" href="<?php echo admin_url('admin.php?page=' . EDD_IFSO_PLUGIN_GROUPS_PAGE); ?>">Create an audience</a> </p></div>
+                            <div class="nogroups_noticebox yellow-noticebox"><p><?php _e('You haven\'t created any audiences yet', 'kd-wc');?>  <a target="_blank" href="<?php echo admin_url('admin.php?page=' . EDD_KDWC_PLUGIN_GROUPS_PAGE); ?>">Create an audience</a> </p></div>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -1388,7 +1388,7 @@ function get_rule_item($index, $rule=array(), $is_template = false) {
                             <?php else: ?>
                                 <p class="no_groups_notice">You haven't created any audiences</p>
                             <?php endif;?>
-                            <p></p><a target="_blank" href="<?php echo admin_url('admin.php?page=' . EDD_IFSO_PLUGIN_GROUPS_PAGE); ?>"><span class="dashicons dashicons-edit"></span> Manage audiences</a></p>
+                            <p></p><a target="_blank" href="<?php echo admin_url('admin.php?page=' . EDD_KDWC_PLUGIN_GROUPS_PAGE); ?>"><span class="dashicons dashicons-edit"></span> Manage audiences</a></p>
                         </div>
                 </div>
                 <!-- Groups end -->
@@ -1503,17 +1503,17 @@ if (!isset($_COOKIE['kdwc_hide_caching_modal']) && defined('WP_CACHE') && WP_CAC
             <p style='margin-left:-10px;'>Good News <?php echo (!empty($user_name)) ? $user_name : ''; ?>!</p>
             <p>Starting version 1.5.0 Kd-Wc is compatible with page caching! Dynamic content can be loaded using Ajax after the page loads from the cache.</p>
 			<p>Since you are using cache on your website, we recommend enabling the Ajax loading by default for all the triggers.<p>
-			<p><a href="<?php echo admin_url( 'admin.php?page=' . EDD_IFSO_PLUGIN_SETTINGS_PAGE ); ?>" target='_blank'>Click here </a>to visit the plugin settings and enable the option.</p>
+			<p><a href="<?php echo admin_url( 'admin.php?page=' . EDD_KDWC_PLUGIN_SETTINGS_PAGE ); ?>" target='_blank'>Click here </a>to visit the plugin settings and enable the option.</p>
         </div>
         <div class="buttons">
             <button type="button" class="button neverAgain">Never Show Again</button>
             <button type="button" class="button cls">Close</button>
         </div>
-        <img class="guyImg" src="<?php echo IFSO_PLUGIN_DIR_URL . 'admin/images/Help.png';?>">
+        <img class="guyImg" src="<?php echo KDWC_PLUGIN_DIR_URL . 'admin/images/Help.png';?>">
 
     </div>
 <?php endif; ?>
-<!-- IfSoIfSo Modal for caching plugins interop : End -->
+<!-- KdWc Modal for caching plugins interop : End -->
 
 <div class="admin-trigger-wrap"><!--wrap-->
     <div id="repeater-template">

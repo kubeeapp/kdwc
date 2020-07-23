@@ -8,7 +8,7 @@ require_once(__DIR__ . '/impl/w3-total-cache-fragment-caching-filter.class.php')
 require_once(__DIR__ . '/hooks/impl/recurrence-hook.class.php');
 require_once(__DIR__ . '/hooks/impl/analytics-hook.class.php');
 require_once(__DIR__ . '/hooks/impl/groups-hook.class.php');
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
 
 use KDWC\PublicFace\Services\TriggersService\Filters\Hooks;
 use KDWC\Services\PluginSettingsService;

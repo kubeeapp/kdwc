@@ -2,7 +2,7 @@
 
 namespace KDWC\PublicFace\Services\PageVisitsService;
 
-require_once (IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+require_once (KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
 require_once('models/timed-collection/kdwc-page-visits-timed-collection.php');
 require_once('models/timed-collection/persist-strategy/kdwc-cookie-persist-strategy.php');
 require_once('models/timed-collection/item-converter-strategy/kdwc-page-visit-item-converter-strategy.php');
@@ -35,14 +35,14 @@ class PageVisitsService {
 		
 	private function create_page_visits_collection() {
 		/* create persist strategy */
-        $persistStrategy = new \IfSo_CookiePersistStrategy($this->cookie_name);
+        $persistStrategy = new \KdWc_CookiePersistStrategy($this->cookie_name);
 		
 		/* create item converter strategy */
-		$itemConverterStrategy = new \IfSo_PageVisitItemConverterStrategy();
+		$itemConverterStrategy = new \KdWc_PageVisitItemConverterStrategy();
 		$save_time = $this->get_save_time_span();
 
 		return 
-			new \IfSo_PageVisitsTimedCollection( $persistStrategy, 
+			new \KdWc_PageVisitsTimedCollection( $persistStrategy, 
 												$itemConverterStrategy,
 												$save_time );
 	}

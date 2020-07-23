@@ -3,7 +3,7 @@
 namespace KDWC\PublicFace\Services\TriggersService\Filters;
 
 require_once( plugin_dir_path ( __DIR__ ) . 'filter-base.class.php');
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
 
 use KDWC\Services\PluginSettingsService;
 

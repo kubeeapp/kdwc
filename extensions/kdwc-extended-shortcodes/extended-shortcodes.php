@@ -5,11 +5,11 @@ Description: Shortcodes for kd-wc.com
 Version: 1.0
 Author: If So Plugin
 */
-namespace KDWC\Extensions\IFSOExtendedShortcodes\ExtendedShortcodes;
+namespace KDWC\Extensions\KDWCExtendedShortcodes\ExtendedShortcodes;
 
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php');
-require_once (IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
-require_once(IFSO_PLUGIN_BASE_DIR . 'public/services/analytics-service/analytics-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php');
+require_once (KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'public/services/analytics-service/analytics-service.class.php');
 
 require_once(__DIR__.'/models/user-languages/index.php');
 
@@ -41,7 +41,7 @@ class ExtendedShortcodes {
     }
 
     public function doDKIShortcode(){
-        //Super shortcode IfsoDKI combines the functionality of the other extended shortcodes- others still here for compatability.DRY! Refactor?
+        //Super shortcode KdwcDKI combines the functionality of the other extended shortcodes- others still here for compatability.DRY! Refactor?
         add_shortcode('kdwcDKI',function($atts){
 
             if(!isset($atts['type']))

@@ -2,7 +2,7 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; /* Prevent direct access */
 
 
-	require_once(IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+	require_once(KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
 
 	use KDWC\Services\PluginSettingsService;
 

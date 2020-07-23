@@ -11,7 +11,7 @@
  * @author     Nick Martianov
  */
 
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
 
 class Kd_Wc_Admin_Settings {
 
@@ -117,8 +117,8 @@ class Kd_Wc_Admin_Settings {
 					$message = stripslashes(urldecode( $_GET['message'] ));
                     $message = filter_var($message,FILTER_SANITIZE_FULL_SPECIAL_CHARS);     //REMOVE XSS
 					if(isset($_GET['wrongLicenseGoto']) && !empty($_GET['wrongLicenseGoto']) && $_GET['wrongLicenseGoto']!='false'){
-						$geo_page_link = (admin_url('admin.php?page=' . EDD_IFSO_PLUGIN_GEO_PAGE));
-						$license_page_link = admin_url( 'admin.php?page=' . EDD_IFSO_PLUGIN_LICENSE_PAGE);
+						$geo_page_link = (admin_url('admin.php?page=' . EDD_KDWC_PLUGIN_GEO_PAGE));
+						$license_page_link = admin_url( 'admin.php?page=' . EDD_KDWC_PLUGIN_LICENSE_PAGE);
 						if ($_GET['wrongLicenseGoto']=='geo') $message = "You have entered a Geolocation License. To activate a Geolocation License please go to <a href='{$geo_page_link}'> Kd-Wc > Geolocation</a>.";
 						if ($_GET['wrongLicenseGoto']=='pro') $message = "The license you entered is not a Geolocation license. Click <a href='https://www.kd-wc.com/plans/geolocation-plans/?utm_source=Plugin&utm_medium=message&utm_campaign=geolocation&utm_term=Prolicense&utm_content=a' target='_blank'>here</a> to purchase a Geolocation license or go to <a href='{$license_page_link}'> Kd-Wc > License</a> if you want to activate a Pro license.";
 					}
@@ -153,8 +153,8 @@ class Kd_Wc_Admin_Settings {
 					$message = stripslashes(urldecode($_GET['message']));
                     $message = filter_var($message,FILTER_SANITIZE_FULL_SPECIAL_CHARS);     //REMOVE XSS
 					if(isset($_GET['wrongLicenseGoto']) && !empty($_GET['wrongLicenseGoto']) && $_GET['wrongLicenseGoto']!='false'){
-						$geo_page_link = admin_url('admin.php?page=' . EDD_IFSO_PLUGIN_GEO_PAGE);
-						$license_page_link = admin_url( 'admin.php?page=' . EDD_IFSO_PLUGIN_LICENSE_PAGE);
+						$geo_page_link = admin_url('admin.php?page=' . EDD_KDWC_PLUGIN_GEO_PAGE);
+						$license_page_link = admin_url( 'admin.php?page=' . EDD_KDWC_PLUGIN_LICENSE_PAGE);
 						if ($_GET['wrongLicenseGoto']=='geo') $message = "You have entered a Geolocation License. To activate a Geolocation License please go to <a href='{$geo_page_link}'> Kd-Wc > Geolocation</a>.";
 						if ($_GET['wrongLicenseGoto']=='pro') $message = "The license you entered is not a Geolocation license. Click <a href='https://www.kd-wc.com/plans/geolocation-plans/?utm_source=Plugin&utm_medium=message&utm_campaign=geolocation&utm_term=Prolicense&utm_content=a' target='_blank'>here</a> to purchase a Geolocation license or go to <a href='{$license_page_link}'> Kd-Wc > License</a> if you want to activate a Pro license.";
 					}
@@ -511,7 +511,7 @@ class Kd_Wc_Admin_Settings {
 			$email = [
 				'text'=>"This is a testing email from {$domain}. If this email got to your spam folder please mark it as \"NOT SPAM\".",
 				'to'=>$addr,
-				'subject'=>'Ifso test email for ' . $domain,
+				'subject'=>'KdWc test email for ' . $domain,
 				'headers'=>'From: ' .  'kdwc-email-checker@' . $domain
 			];
 			var_dump($email);
@@ -574,10 +574,10 @@ class Kd_Wc_Admin_Settings {
 		// Load default's version metadata
 		$default_version_metadata = $this->load_default_version_metadata($post_id);
 
-		require_once(IFSO_PLUGIN_BASE_DIR. 'public/services/analytics-service/analytics-service.class.php'); //including the analytics service to later pull the relevant fields out of it;
+		require_once(KDWC_PLUGIN_BASE_DIR. 'public/services/analytics-service/analytics-service.class.php'); //including the analytics service to later pull the relevant fields out of it;
 		$analytics_service = KDWC\PublicFace\Services\AnalyticsService\AnalyticsService::get_instance();
 
-		require_once(IFSO_PLUGIN_BASE_DIR. 'public/models/data-rules/kdwc-data-rules-model.class.php'); //including the analytics service to later pull the relevant fields out of it;
+		require_once(KDWC_PLUGIN_BASE_DIR. 'public/models/data-rules/kdwc-data-rules-model.class.php'); //including the analytics service to later pull the relevant fields out of it;
 		$data_rules_model  = new KDWC\PublicFace\Models\DataRulesModel\DataRulesModel;
 
 		foreach($_POST['repeater'] as $index => $group_item) {

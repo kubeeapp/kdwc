@@ -7,8 +7,8 @@
  * @author Matan Green
  */
 
-if (!class_exists('IfSo_TimedItem')) {
-	abstract class IfSo_TimedItem {
+if (!class_exists('KdWc_TimedItem')) {
+	abstract class KdWc_TimedItem {
 		protected $saved_at;
 		protected $saved_until;
 

@@ -8,7 +8,7 @@ var kdwc_viewed_triggers = {};
 
 		function lookForLoadLaterTriggers(){
 			var ret = [];
-			var tags = $('IfSoTrigger');
+			var tags = $('KdWcTrigger');
 			tags.each(function(index,el){
 				var tid = el.getAttribute('tid');
 				if(null!== tid && $.inArray(tid,ret)<0){
@@ -26,7 +26,7 @@ var kdwc_viewed_triggers = {};
 						try{
 							var data = JSON.parse(ret);
 							$.each(data, function(tid,tval){
-								var tagsInDom = $('IfSoTrigger[tid="'+tid+'"]');
+								var tagsInDom = $('KdWcTrigger[tid="'+tid+'"]');
 								tagsInDom.each(function(i,tag){
 									tag.outerHTML = tval;
 								})

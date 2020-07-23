@@ -1,6 +1,6 @@
 <?php
 namespace KDWC\PublicFace\Services\TriggersService\Triggers;
-require_once( IFSO_PLUGIN_SERVICES_BASE_DIR . 'trigger-validation-service/trigger-validation-service.class.php' );
+require_once( KDWC_PLUGIN_SERVICES_BASE_DIR . 'trigger-validation-service/trigger-validation-service.class.php' );
 use KDWC\PublicFace\Services\TriggerValidationService;
 abstract class TriggerBase {
 	protected $trigger_name;

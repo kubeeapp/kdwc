@@ -1,9 +1,9 @@
 <?php
 namespace KDWC\PublicFace\Services\TriggersService\Triggers;
 require_once( plugin_dir_path ( __DIR__ ) . 'trigger-base.class.php');
-require_once( IFSO_PLUGIN_SERVICES_BASE_DIR . 'timezones-service/timezones-service.class.php' );
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php');
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php');
+require_once( KDWC_PLUGIN_SERVICES_BASE_DIR . 'timezones-service/timezones-service.class.php' );
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php');
 use KDWC\PublicFace\Services\TimezonesService;
 use KDWC\Services\LicenseService;
 use KDWC\Services\GeolocationService;

@@ -1,6 +1,6 @@
 <?php
 
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/geolocation-service/geolocation-service.class.php');
 use KDWC\Services\GeolocationService;
 
 function is_geo_data($geoDatas) {

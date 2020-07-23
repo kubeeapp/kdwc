@@ -7,11 +7,11 @@
  * @author Matan Green <matangrn@gmail.com>
  */
 
-if (!class_exists('IfSo_PageVisitTimedItem')) {
+if (!class_exists('KdWc_PageVisitTimedItem')) {
 
 	require_once('kdwc-timed-item.php');
 
-	class IfSo_PageVisitTimedItem extends IfSo_TimedItem {
+	class KdWc_PageVisitTimedItem extends KdWc_TimedItem {
 		protected $page;
 
 		public function __construct( $saved_at, $saved_until, $page ) {

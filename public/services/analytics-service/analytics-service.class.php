@@ -8,7 +8,7 @@
 
 namespace KDWC\PublicFace\Services\AnalyticsService;
 
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/plugin-settings-service/plugin-settings-service.class.php');
 
 
 class AnalyticsService {

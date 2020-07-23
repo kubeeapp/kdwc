@@ -38,10 +38,10 @@ class Kd_Wc_Admin {
      * @var      array    $admin_pages    List of admin pages in the plugin.
      */
     private $admin_pages = [
-        EDD_IFSO_PLUGIN_GROUPS_PAGE,
-        EDD_IFSO_PLUGIN_SETTINGS_PAGE,
-        EDD_IFSO_PLUGIN_GEO_PAGE,
-        EDD_IFSO_PLUGIN_LICENSE_PAGE,
+        EDD_KDWC_PLUGIN_GROUPS_PAGE,
+        EDD_KDWC_PLUGIN_SETTINGS_PAGE,
+        EDD_KDWC_PLUGIN_GEO_PAGE,
+        EDD_KDWC_PLUGIN_LICENSE_PAGE,
     ];
 
 	/**
@@ -145,7 +145,7 @@ class Kd_Wc_Admin {
             wp_enqueue_style( $this->plugin_name.'FontAwesome', plugin_dir_url( __FILE__ ) . 'css/font-awesome-4.7.0/css/font-awesome.min.css', array(), $this->version, 'all' );
 
             /* jquery modal - jquerymodal.com */
-            wp_enqueue_style( $this->plugin_name.'IfSoJqueryModalCSS', plugin_dir_url( __FILE__ ) . 'css/jquery.modal.min.css', array(), $this->version, 'all' );
+            wp_enqueue_style( $this->plugin_name.'KdWcJqueryModalCSS', plugin_dir_url( __FILE__ ) . 'css/jquery.modal.min.css', array(), $this->version, 'all' );
 
             wp_enqueue_style( $this->plugin_name.'Style', plugin_dir_url( __FILE__ ) . 'css/kd-wc-admin.css', array(), $this->version, 'all' );
 
@@ -205,7 +205,7 @@ class Kd_Wc_Admin {
 				jsTranslations['translatable_dupplicated_query_string_notification_publish'] = '".__('It is not possible to create two query strings with the same name. If you publish now, the second version will be deleted.')."';
 		    </script>";
             // wp_enqueue_script( $this->plugin_name.'GoogleAPIService', 'https://maps.googleapis.com/maps/api/js?key='.GOOGLE_API_KEY.'&libraries=places&callback=initAutocomplete', array(  ), $this->version, true );
-            wp_enqueue_script( $this->plugin_name.'IfSoHelpers', plugin_dir_url( __FILE__ ) . 'js/helpers.js', array(), $this->version, false );
+            wp_enqueue_script( $this->plugin_name.'KdWcHelpers', plugin_dir_url( __FILE__ ) . 'js/helpers.js', array(), $this->version, false );
 
             wp_enqueue_script( $this->plugin_name.'BootstrapJS', plugin_dir_url( __FILE__ ) . 'js/bootstrap.min.js', array( 'jquery' ), $this->version, false );
             wp_enqueue_script( $this->plugin_name.'JQueryMinUI', plugin_dir_url( __FILE__ ) . 'js/jquery-ui.min.js', array( 'jquery' ), $this->version, false );
@@ -221,7 +221,7 @@ class Kd_Wc_Admin {
             wp_enqueue_script( $this->plugin_name.'EasyAutocompleteJS', plugin_dir_url( __FILE__ ) . 'js/jquery.easy-autocomplete.min.js', array( 'jquery' ), $this->version, false );
 
             /* jquery modal - http://jquerymodal.com/ */
-            wp_enqueue_script( $this->plugin_name.'IfSoJqueryModalJS', plugin_dir_url( __FILE__ ) . 'js/jquery.modal.min.js', array( 'jquery' ), $this->version, false );
+            wp_enqueue_script( $this->plugin_name.'KdWcJqueryModalJS', plugin_dir_url( __FILE__ ) . 'js/jquery.modal.min.js', array( 'jquery' ), $this->version, false );
 
             wp_enqueue_script( $this->plugin_name.'VendorsJS', plugin_dir_url( __FILE__ ) . 'js/vendors.js', array( 'jquery' ), $this->version, false );
 

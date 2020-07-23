@@ -2,7 +2,7 @@
 
 namespace KDWC\PublicFace\Services\TriggerValidationService;
 
-require_once(IFSO_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'services/license-service/license-service.class.php');
 
 use KDWC\Services\LicenseService;
 

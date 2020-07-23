@@ -75,7 +75,7 @@ class Kd_Wc {
 
 		$this->define_global_constants();
 
-        $this->version = IFSO_WP_VERSION;
+        $this->version = KDWC_WP_VERSION;
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -247,9 +247,9 @@ class Kd_Wc {
         $after_upgrade = KDWC\Services\AfterUpgradeService\AfterUpgradeService::get_instance();
         $trigger_port_handler = \KDWC\Services\TriggerPortService\TriggerPortHandler::get_instance();
         $analytics_ajax_handler = KDWC\PublicFace\Services\AnalyticsService\AnalyticsAjaxHandler::get_instance();
-        $gutenberg_block_includer = KDWC\Extensions\IfSoGutenbergBlock\IfSoGutenberBlock\IfSoGutenberBlock::get_instance();
+        $gutenberg_block_includer = KDWC\Extensions\KdWcGutenbergBlock\KdWcGutenberBlock\KdWcGutenberBlock::get_instance();
         $groups_handler = KDWC\PublicFace\Services\GroupsService\GroupsHandler::get_instance();
-        $elementor_support = Ifso\Extensions\Elementor\IFSO_Elementor_Widgets::get_instance();
+        $elementor_support = Ifso\Extensions\Elementor\KDWC_Elementor_Widgets::get_instance();
 
 
         /**
@@ -269,7 +269,7 @@ class Kd_Wc {
 		/**
 		 * For Extended Shortcodes.
 		 */
-		$ext_shortcodes = KDWC\Extensions\IFSOExtendedShortcodes\ExtendedShortcodes\ExtendedShortcodes::get_instance();
+		$ext_shortcodes = KDWC\Extensions\KDWCExtendedShortcodes\ExtendedShortcodes\ExtendedShortcodes::get_instance();
 		$this->loader->add_action('init', $ext_shortcodes, 'add_extended_shortcodes', 10);
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' , 99 );

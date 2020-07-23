@@ -62,7 +62,7 @@ class LicenseService {
 			$message = false;
 			$license_data = false;
 			// Call the custom API.
-			$response = wp_remote_post( EDD_IFSO_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_payload ) );
+			$response = wp_remote_post( EDD_KDWC_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_payload ) );
 
 			// make sure the response came back okay
 			if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
@@ -222,7 +222,7 @@ class LicenseService {
 			'url'       => home_url()
 		);
 		// Call the custom API.
-		$response = wp_remote_post( EDD_IFSO_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
+		$response = wp_remote_post( EDD_KDWC_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
 		if ( is_wp_error( $response ) )
 			return false;
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
@@ -294,11 +294,11 @@ class LicenseService {
 			$passed_license_id = get_option('edd_kdwc_license_item_id');
             $wrongLicenseGoto='false';
 			if(empty($message) && in_array($passed_license_id, $this->geo_array)){
-                $geo_page_link = urlencode(admin_url('admin.php?page=' . EDD_IFSO_PLUGIN_GEO_PAGE));
+                $geo_page_link = urlencode(admin_url('admin.php?page=' . EDD_KDWC_PLUGIN_GEO_PAGE));
                 $message .= __("You have entered a Geolocation License. To activate a Geolocation License please go to",'kd-wc')." <a href='{$geo_page_link}'> Kd-Wc > Geolocation</a>.";
                 $wrongLicenseGoto = 'geo';
             }
-			$base_url = admin_url( 'admin.php?page=' . EDD_IFSO_PLUGIN_LICENSE_PAGE);
+			$base_url = admin_url( 'admin.php?page=' . EDD_KDWC_PLUGIN_LICENSE_PAGE);
 
 			if ( ! empty( $message ) ) {
 			    //If an error message was generated earlier, redirect back to the page, showing the relevant error messages
@@ -334,7 +334,7 @@ class LicenseService {
 			$license = trim( $_POST['for_deactivation'] );
 			$item_id = get_option( 'edd_kdwc_license_item_id' );
 			$license_data = $this->edd_api_deactivate_item($license, $item_id);
-			$base_url = admin_url( 'admin.php?page=' . EDD_IFSO_PLUGIN_LICENSE_PAGE );
+			$base_url = admin_url( 'admin.php?page=' . EDD_KDWC_PLUGIN_LICENSE_PAGE );
 
 			if ($license_data->success) { //לבדוק מה מוחזר אם הרשיון לא קיים באד. לדוגמא, נמחק ידנית דרך אד.
 
@@ -384,7 +384,7 @@ class LicenseService {
 		$item_id = get_option('edd_kdwc_license_item_id'); // $this->primary_product_id;
 		if ( $license && $item_id ) {
 			// setup the updater
-			$edd_updater = new \EDD_SL_Plugin_Updater( EDD_IFSO_STORE_URL, IFSO_PLUGIN_MAIN_FILE_NAME, array(
+			$edd_updater = new \EDD_SL_Plugin_Updater( EDD_KDWC_STORE_URL, KDWC_PLUGIN_MAIN_FILE_NAME, array(
 					'version' 	=> '1.0', // current version number
 					'license' 	=> $license, // license key
 					'item_id' => $item_id,

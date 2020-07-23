@@ -155,7 +155,7 @@ class InterfaceModService{
     ?>
         <div class="pagebuilders-noticebox purple-noticebox">
             <span class="closeX" style="border-color:#c0bc25;">X</span>
-            <p>We noticed that you are using <?php echo implode(', ', $active_page_builders); ?>. If you encounter any issues after pasting the shortcode go to <a href="<?php echo admin_url( 'admin.php?page=' . EDD_IFSO_PLUGIN_SETTINGS_PAGE ); ?>" target="_blank">Kd-Wc > Settings </a> and change the status of the "The_content" filter checkbox.</p>
+            <p>We noticed that you are using <?php echo implode(', ', $active_page_builders); ?>. If you encounter any issues after pasting the shortcode go to <a href="<?php echo admin_url( 'admin.php?page=' . EDD_KDWC_PLUGIN_SETTINGS_PAGE ); ?>" target="_blank">Kd-Wc > Settings </a> and change the status of the "The_content" filter checkbox.</p>
         </div>
     <?php
     }

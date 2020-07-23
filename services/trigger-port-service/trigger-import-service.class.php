@@ -10,7 +10,7 @@ namespace KDWC\Services\TriggerPortService;
 
 use KDWC\PublicFace\Services\AnalyticsService\AnalyticsService;
 
-require_once(IFSO_PLUGIN_BASE_DIR . 'public/services/analytics-service/analytics-service.class.php');
+require_once(KDWC_PLUGIN_BASE_DIR . 'public/services/analytics-service/analytics-service.class.php');
 
 class TriggerImportService{
 

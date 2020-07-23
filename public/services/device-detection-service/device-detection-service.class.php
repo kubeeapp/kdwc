@@ -1,7 +1,7 @@
 <?php
 	
 	namespace KDWC\PublicFace\Services\DeviceDetectionService;
-	require_once('IfSo_Mobile_Detector.php');
+	require_once('KdWc_Mobile_Detector.php');
 	class DeviceDetectionService {
 		private static $instance;
 		private $detector;

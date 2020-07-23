@@ -24,7 +24,7 @@
  *
  * @version     2.8.25
  */
-class IfSo_Mobile_Detect
+class KdWc_Mobile_Detect
 {
     /**
      * Mobile detection type.

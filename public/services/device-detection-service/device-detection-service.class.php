@@ -6,7 +6,7 @@
 		private static $instance;
 		private $detector;
 		private function __construct() {
-			$this->detector = new \IfSo_Mobile_Detect;
+			$this->detector = new \KdWc_Mobile_Detect;
 		}
 		public static function get_instance() {
 			if ( NULL == self::$instance )

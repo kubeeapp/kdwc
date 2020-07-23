@@ -43,7 +43,7 @@ class RecurrenceHandler extends ChainHandlerBase {
 			$recurrence_type = 'all-session';
 			$recurrence_expiration_date = '';
 
-			// TODO Create the following service under IfsoServices namespace (Already exists as recurrence_handler)
+			// TODO Create the following service under KdwcServices namespace (Already exists as recurrence_handler)
 			if (RecurrenceService\RecurrenceService::get_instance()->is_recurrence_valid($data_rules, 
 				$recurrence_version_index, $recurrence_version_type, $recurrence_type, $is_license_valid, $recurrence_expiration_date)) {
 				// the recurrence is valid!

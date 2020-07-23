@@ -4,7 +4,7 @@
 	var defaultTransition = "none";
 	var defaultDuration = 400;
 
-	function applyIfsoBlocksChanger($this) {
+	function applyKdwcBlocksChanger($this) {
 		var toShowClassNames = $this.data("show") || "";
 		var toHideClassNames = $this.data("hide") || "";
 		var transition = $this.data("transition") || defaultTransition;
@@ -55,10 +55,10 @@
 	}
 
 	$(".kdwc-changer").on("click", function() {
-		applyIfsoBlocksChanger($(this));
+		applyKdwcBlocksChanger($(this));
 	});
 
 	$(".kdwc-hover-changer").on("hover", function() {
-		applyIfsoBlocksChanger($(this));
+		applyKdwcBlocksChanger($(this));
 	});
 })( jQuery );

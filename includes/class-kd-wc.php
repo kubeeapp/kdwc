@@ -249,7 +249,7 @@ class Kd_Wc {
         $analytics_ajax_handler = KDWC\PublicFace\Services\AnalyticsService\AnalyticsAjaxHandler::get_instance();
         $gutenberg_block_includer = KDWC\Extensions\KdWcGutenbergBlock\KdWcGutenberBlock\KdWcGutenberBlock::get_instance();
         $groups_handler = KDWC\PublicFace\Services\GroupsService\GroupsHandler::get_instance();
-        $elementor_support = Ifso\Extensions\Elementor\KDWC_Elementor_Widgets::get_instance();
+        $elementor_support = Kdwc\Extensions\Elementor\KDWC_Elementor_Widgets::get_instance();
 
 
         /**

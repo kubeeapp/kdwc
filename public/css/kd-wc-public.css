@@ -1,7 +1,7 @@
 
 
 
-.IfsoForm1 {
+.KdwcForm1 {
 	z-index: 999999999;
 	width: 100%;
     max-width: 290px;
@@ -13,18 +13,18 @@
     font-size: 18px;
 }
 
-.IfsoFromTop {
+.KdwcFromTop {
     background: #695978;
     padding: 30px 10px 0;
     text-align: center;
     font-weight: 500;
 }
-.IfsoFromBottom {
+.KdwcFromBottom {
     padding: 10px;
 	cursor: pointer;
 }
 
-.IfsoFormToggleBtn {
+.KdwcFormToggleBtn {
 	float: left;
     width: 28px;
     height: 28px;
@@ -34,7 +34,7 @@
     font-weight: 600;
 }
 
-.IfsoFormToggleBtnClose {
+.KdwcFormToggleBtnClose {
 	float: left;
     width: 28px;
     height: 28px;
@@ -44,7 +44,7 @@
     font-weight: 600;
 }
 
-.IfsoFormCloseBtn {
+.KdwcFormCloseBtn {
 	background: none;
     border: 0;
     top: -5px;
